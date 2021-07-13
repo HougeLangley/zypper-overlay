@@ -3,6 +3,8 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-{3..4} luajit )
+
 inherit cmake lua-single
 
 SRC_URI="https://github.com/openSUSE/libzypp/archive/refs/tags/${PV}.tar.gz -> libzypp-${PV}.tar.gz"
