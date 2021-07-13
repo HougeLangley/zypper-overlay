@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit meson ninja-utils
+inherit meson
 SRC_URI="https://github.com/zchunk/zchunk/archive/refs/tags/${PV}.tar.gz -> ${PN}-${PV}.tar.gz"
 KEYWORDS="~amd64"
 DESCRIPTION="A format designed for highly efficient deltas while maintaining good compression"
@@ -19,7 +19,3 @@ DEPEND="
 BDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}-${PV}"
-
-src_configure(){
-	meson_src_configure
-}
