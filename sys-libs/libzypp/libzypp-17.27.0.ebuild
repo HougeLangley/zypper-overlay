@@ -3,7 +3,7 @@
 
 EAPI=7
 
-LUA_COMPAT=( lua5-{3..4} luajit )
+LUA_COMPAT=( lua5-{3..4} )
 
 inherit cmake lua-single
 
