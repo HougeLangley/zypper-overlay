@@ -18,7 +18,6 @@ DEPEND="
 	app-crypt/gpgme
 	net-libs/libproxy
 	dev-libs/libsigc++:2
-	sys-apps/systemd
 	dev-libs/libxml2
 	dev-cpp/yaml-cpp
 	sys-libs/libsolv
