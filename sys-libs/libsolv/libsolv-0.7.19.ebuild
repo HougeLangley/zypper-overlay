@@ -25,8 +25,8 @@ DEPEND="
 BDEPEND="${DEPEND}
 	dev-util/cmake
 	dev-lang/perl
-	dev-lang/python
-	dev-lang/ruby
+	dev-lang/python:3.9
+	dev-lang/ruby:2.7
 	dev-lang/swig
 "
 
