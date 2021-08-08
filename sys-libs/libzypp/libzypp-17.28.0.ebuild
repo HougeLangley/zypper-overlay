@@ -45,8 +45,8 @@ src_configure(){
 	mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX="/usr"
 		-DCMAKE_BUILD_TYPE=Release
-		-DCMAKE_DRI_LIB="$(get_libdir)/${P}"
 		-DCMAKE_SKIP_RPATH=1
+		-DCMAKE_PREFIX_PATH="/usr/share/cmake/Modules"
 		-DDISABLE_MEDIABACKEND_TESTS=ON
 		-DENABLE_BUILD_DOCS=ON
 		-DENABLE_BUILD_TRANS=ON
