@@ -36,6 +36,7 @@ BDEPEND="${DEPEND}
 	dev-util/ninja
 	dev-util/rpmdevtools
 	app-arch/rpm[${LUA_SINGLE_USEDEP},lua]
+	dev-libs/protobuf
 "
 
 S="${WORKDIR}/${PN}-${PV}"
