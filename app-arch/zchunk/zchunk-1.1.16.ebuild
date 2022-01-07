@@ -1,7 +1,7 @@
-# Copyright 2017-2021 Gentoo Authors
+# Copyright 2017-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit meson
 SRC_URI="https://github.com/zchunk/zchunk/archive/refs/tags/${PV}.tar.gz -> ${PN}-${PV}.tar.gz"
@@ -19,13 +19,3 @@ DEPEND="
 BDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}-${PV}"
-
-#src_configure(){
-#	local mesonargs=(
-#		meson setup
-#		--libdir "/lib64"
-#		--prefix "/usr/bin"
-#		--sysconfdir "/etc"
-#	)
-#	meson_src_configure
-#}
