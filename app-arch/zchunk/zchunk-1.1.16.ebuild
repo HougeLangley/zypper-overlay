@@ -20,12 +20,12 @@ BDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}-${PV}"
 
-src_configure(){
-	local mesonargs=(
-		meson setup
-		--libdir "/lib64"
-		--prefix "/usr/bin"
-		--sysconfdir "/etc"
-	)
-	meson_src_configure
-}
+#src_configure(){
+#	local mesonargs=(
+#		meson setup
+#		--libdir "/lib64"
+#		--prefix "/usr/bin"
+#		--sysconfdir "/etc"
+#	)
+#	meson_src_configure
+#}
