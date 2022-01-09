@@ -27,6 +27,7 @@ DEPEND="
 	app-arch/rpm
 	dev-libs/boost
 	dev-libs/protobuf
+	dev-ruby/asciidoctor
 	<dev-cpp/yaml-cpp-0.7.0
 	net-libs/libproxy
 	app-doc/doxygen
