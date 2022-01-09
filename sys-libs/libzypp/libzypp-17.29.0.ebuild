@@ -27,10 +27,10 @@ DEPEND="
 	app-arch/rpm
 	dev-libs/boost
 	dev-libs/protobuf
-	dev-cpp/yaml-cpp:0.6
+	<dev-cpp/yaml-cpp-0.7.0
 	net-libs/libproxy
 	app-doc/doxygen
-	dev-libs/libsigc++:2
+	<dev-libs/libsigc++-3.0.7
 	dev-python/graphviz
 "
 BDEPEND="${DEPEND}"
