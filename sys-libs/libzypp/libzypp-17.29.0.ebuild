@@ -1,14 +1,20 @@
-# Copyright 2017-2021 Gentoo Authors
+# Copyright 2017-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-LUA_COMPAT=( lua5-4 )
+inherit cmake
+if [[ ${PV} == 9999* ]] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/openSUSE/libzypp.git"
+	EGIT_CHECKOUT_DIR=${PN}-${PV}
+	KEYWORDS=""
+else
+	SRC_URI="https://github.com/openSUSE/libzypp/archive/refs/tags/${PV}.tar.gz -> libzypp-${PV}.tar.gz"
+	KEYWORDS="~amd64"
+	S="${WORKDIR}/${PN}-${PV}"
+fi
 
-inherit cmake lua-single
-
-SRC_URI="https://github.com/openSUSE/libzypp/archive/refs/tags/${PV}.tar.gz -> libzypp-${PV}.tar.gz"
-KEYWORDS="~amd64"
 DESCRIPTION="ZYpp Package Management library"
 HOMEPAGE="https://doc.opensuse.org/projects/libzypp/HEAD/"
 LICENSE="GPL-2"
@@ -20,43 +26,24 @@ RDEPEND="
 DEPEND="
 	app-arch/rpm
 	dev-libs/boost
-	
-	app-crypt/gpgme
-	net-libs/libproxy
-	dev-libs/libsigc++:2
-	dev-libs/libxml2
-	dev-cpp/yaml-cpp
-	
-"
-BDEPEND="${DEPEND}
-	app-text/asciidoc
-	dev-util/cmake
-	dev-util/dejagnu
-	app-doc/doxygen
-	dev-libs/expat
-	dev-vcs/git
-	app-crypt/gnupg
-	media-gfx/graphviz
-	dev-util/ninja
-	dev-util/rpmdevtools
-	app-arch/rpm[${LUA_SINGLE_USEDEP},lua]
 	dev-libs/protobuf
+	dev-cpp/yaml-cpp:0.6
+	net-libs/libproxy
+	app-doc/doxygen
+	dev-libs/libsigc++:2
+	dev-python/graphviz
 "
-
-S="${WORKDIR}/${PN}-${PV}"
+BDEPEND="${DEPEND}"
 
 src_configure(){
 	mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX="/usr"
-		-DCMAKE_BUILD_TYPE=Release
-		-DCMAKE_SKIP_RPATH=1
-		-DFindPkgConfig_DIR="/usr/share/cmake/Modules"
-		-DDISABLE_MEDIABACKEND_TESTS=ON
-		-DENABLE_BUILD_DOCS=ON
 		-DENABLE_BUILD_TRANS=ON
-		-DENABLE_BUILD_TESTS=ON
-		-DENABLE_ZCHUNK_COMPRESSION=ON
+		-DENABLE_BUILD_DOCS=OFF
 		-DENABLE_ZSTD_COMPRESSION=ON
+		-DENABLE_ZCHUNK_COMPRESSION=ON
+		-DDISABLE_MEDIABACKEND_TESTS=ON
+		-DENABLE_PREVIEW_SINGLE_RPMTRANS_AS_DEFAULT_FOR_ZYPPER=OFF
 	)
 	cmake_src_configure
 }
