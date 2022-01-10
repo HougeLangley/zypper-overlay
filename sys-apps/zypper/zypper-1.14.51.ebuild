@@ -23,7 +23,9 @@ IUSE=""
 RDEPEND="
 	sys-libs/libzypp
 "
-DEPEND=""
+DEPEND="
+	app-admin/augeas
+"
 BDEPEND="${DEPEND}"
 
 src_configure(){
