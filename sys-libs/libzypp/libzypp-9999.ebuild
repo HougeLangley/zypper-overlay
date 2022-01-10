@@ -38,6 +38,7 @@ BDEPEND="${DEPEND}"
 
 src_configure(){
 	mycmakeargs=(
+		-DCMAKE_BUILD_TYPE=Release
 		-DENABLE_BUILD_TRANS=ON
 		-DENABLE_BUILD_TESTS=ON
 		-DENABLE_BUILD_DOCS=OFF
