@@ -33,21 +33,17 @@ DEPEND="
 	app-doc/doxygen
 	<dev-libs/libsigc++-3.0.7
 	dev-python/graphviz
-	dev-libs/fcgi
-	www-servers/nginx
 "
 BDEPEND="${DEPEND}"
 
 src_configure(){
 	mycmakeargs=(
-		-DCMAKE_BUILD_TYPE=Release
-		-DCMAKE_SKIP_RPATH=1
-		-DDISABLE_MEDIABACKEND_TESTS=ON
-		-DENABLE_BUILD_DOCS=ON
 		-DENABLE_BUILD_TRANS=ON
 		-DENABLE_BUILD_TESTS=ON
-		-DENABLE_ZCHUNK_COMPRESSION=ON
+		-DENABLE_BUILD_DOCS=OFF
 		-DENABLE_ZSTD_COMPRESSION=ON
+		-DENABLE_ZCHUNK_COMPRESSION=ON
+		-DDISABLE_MEDIABACKEND_TESTS=ON
 	)
 	cmake_src_configure
 }
