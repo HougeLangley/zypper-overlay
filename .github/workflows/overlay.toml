@@ -1,0 +1,23 @@
+[__config__]
+oldver = "old_ver.json"
+newver = "new_ver.json"
+
+[zchunk]
+source = "github"
+github = "zchunk/zchunk"
+use_latest_tag = true
+
+[zypper]
+source = "github"
+github = "openSUSE/zypper"
+use_latest_tag = true
+
+[libsolv]
+source = "github"
+github = "openSUSE/libsolv"
+use_latest_tag = true
+
+[libzypp]
+source = "github"
+github = "openSUSE/libzypp"
+use_latest_tag = true
