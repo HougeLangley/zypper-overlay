@@ -29,11 +29,9 @@ DEPEND="
 	dev-libs/boost
 	dev-libs/protobuf
 	dev-ruby/asciidoctor
-	#<dev-cpp/yaml-cpp-0.7.0
 	dev-cpp/yaml-cpp
 	net-libs/libproxy
 	app-doc/doxygen
-	#<dev-libs/libsigc++-3.0.7
 	dev-libs/libsigc++
 	dev-python/graphviz
 "
