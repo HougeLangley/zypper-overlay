@@ -24,6 +24,7 @@ RDEPEND="
 	sys-libs/libsolv
 "
 DEPEND="
+	${RDEPEND}
 	app-arch/rpm
 	dev-libs/boost
 	dev-libs/protobuf
