@@ -33,6 +33,7 @@ BDEPEND="${DEPEND}"
 
 src_configure(){
 	mycmakeargs=(
+		-DCMAKE_C_FLAGS_RELEASE='-DNDEBUG' \
 		-DENABLE_PERL=ON
 		-DENABLE_PYTHON=ON
 		-DENABLE_RUBY=ON
